@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4U Solutions — Gutter & Exterior Services | Oakland County, MI</title>
+<meta name="description" content="Oakland County's trusted gutter installation, cleaning, and exterior service experts. Veteran owned, locally operated. Free estimates. Call (810) 322-0939.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1a2744;
+  --navy-light:#243560;
+  --blue:#2563eb;
+  --blue-light:#3b82f6;
+  --sky:#dbeafe;
+  --green:#16a34a;
+  --green-light:#dcfce7;
+  --orange:#ea580c;
+  --text:#1e293b;
+  --muted:#64748b;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --border:#e2e8f0;
+  --shadow:0 4px 24px rgba(26,39,68,0.10);
+  --shadow-lg:0 8px 40px rgba(26,39,68,0.15);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+h1,h2,h3{font-family:'Lora',serif;line-height:1.25;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{display:flex;flex-direction:column;}
+.nav-logo-name{font-family:'Lora',serif;font-size:20px;font-weight:600;color:var(--navy);}
+.nav-logo-tag{font-size:10px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:color 0.15s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{background:var(--orange);color:white;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;transition:all 0.15s;}
+.nav-cta:hover{background:#c2410c;color:white;}
+.nav-phone{font-size:15px;font-weight:700;color:var(--navy);}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-light) 60%,#1e3a6e 100%);min-height:100vh;display:flex;align-items:center;padding-top:70px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,30 50,50 Q75,70 100,50 L100,100 L0,100Z" fill="rgba(255,255,255,0.03)"/></svg>') no-repeat bottom;background-size:cover;}
+.hero-inner{max-width:1100px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:30px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:20px;font-weight:600;letter-spacing:0.05em;}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;}
+.hero h1{font-size:48px;color:white;margin-bottom:18px;line-height:1.15;}
+.hero h1 span{color:#93c5fd;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:32px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--orange);color:white;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;transition:all 0.15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:#c2410c;transform:translateY(-1px);}
+.btn-secondary{background:rgba(255,255,255,0.12);color:white;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,0.25);transition:all 0.15s;}
+.btn-secondary:hover{background:rgba(255,255,255,0.2);}
+.hero-trust{display:flex;gap:20px;margin-top:32px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.7);font-weight:600;}
+.trust-icon{font-size:16px;}
+
+/* HERO FORM CARD */
+.hero-form-card{background:white;border-radius:20px;padding:32px;box-shadow:var(--shadow-lg);}
+.form-title{font-family:'Lora',serif;font-size:22px;color:var(--navy);margin-bottom:6px;}
+.form-sub{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.form-group{margin-bottom:14px;}
+.form-label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.05em;}
+.form-label span{color:var(--orange);}
+.form-input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'Nunito',sans-serif;color:var(--text);transition:border-color 0.15s;background:var(--light);}
+.form-input:focus{outline:none;border-color:var(--blue);background:white;}
+.form-input::placeholder{color:#94a3b8;}
+.form-select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:'Nunito',sans-serif;color:var(--text);background:var(--light);appearance:none;cursor:pointer;}
+.form-select:focus{outline:none;border-color:var(--blue);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-submit{width:100%;background:var(--orange);color:white;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.15s;margin-top:4px;}
+.form-submit:hover{background:#c2410c;}
+.form-note{text-align:center;font-size:11px;color:var(--muted);margin-top:10px;}
+
+/* SECTION STYLES */
+section{padding:80px 24px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}
+.section-title{font-size:36px;color:var(--navy);margin-bottom:14px;}
+.section-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.7;}
+
+/* TRUST BAR */
+.trust-bar{background:var(--navy);padding:20px 24px;}
+.trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.trust-bar-item{display:flex;align-items:center;gap:10px;color:white;}
+.trust-bar-icon{font-size:20px;}
+.trust-bar-text{font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.service-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:28px;transition:all 0.2s;cursor:pointer;}
+.service-card:hover{border-color:var(--blue);box-shadow:var(--shadow);transform:translateY(-3px);}
+.service-icon{font-size:36px;margin-bottom:14px;}
+.service-name{font-family:'Lora',serif;font-size:20px;color:var(--navy);margin-bottom:8px;}
+.service-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;}
+.service-link{font-size:13px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:5px;}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px;}
+.why-item{display:flex;gap:16px;padding:20px;background:var(--light);border-radius:12px;border:1px solid var(--border);}
+.why-icon{font-size:28px;flex-shrink:0;}
+.why-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.why-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* GALLERY */
+.gallery-bg{background:var(--light);}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
+.gallery-item{aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--border);position:relative;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s;}
+.gallery-item:hover img{transform:scale(1.05);}
+.gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#dbeafe,#e0e7ff);font-size:32px;}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.review-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:24px;}
+.review-stars{color:#f59e0b;font-size:16px;margin-bottom:12px;}
+.review-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:16px;font-style:italic;}
+.review-author{font-size:13px;font-weight:700;color:var(--navy);}
+.review-location{font-size:11px;color:var(--muted);}
+
+/* AREAS */
+.areas-bg{background:var(--navy);}
+.areas-title{color:white;}
+.areas-sub{color:rgba(255,255,255,0.7);}
+.counties-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:40px;}
+.county-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:16px;text-align:center;transition:all 0.15s;}
+.county-card:hover{background:rgba(255,255,255,0.15);}
+.county-name{font-size:15px;font-weight:700;color:white;margin-bottom:4px;}
+.county-cities{font-size:11px;color:rgba(255,255,255,0.6);line-height:1.6;}
+
+/* CTA SECTION */
+.cta-section{background:linear-gradient(135deg,var(--orange),#dc2626);text-align:center;padding:70px 24px;}
+.cta-title{font-size:36px;color:white;margin-bottom:12px;}
+.cta-sub{font-size:17px;color:rgba(255,255,255,0.85);margin-bottom:32px;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:white;color:var(--orange);padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;transition:all 0.15s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+.btn-outline-white{background:transparent;color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;border:2px solid rgba(255,255,255,0.5);transition:all 0.15s;}
+.btn-outline-white:hover{background:rgba(255,255,255,0.15);}
+
+/* CONTACT SECTION */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:48px;}
+.contact-info h3{font-family:'Lora',serif;font-size:24px;color:var(--navy);margin-bottom:20px;}
+.contact-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+.contact-icon{width:44px;height:44px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.contact-label{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;}
+.contact-value{font-size:15px;font-weight:700;color:var(--navy);}
+.contact-form-card{background:var(--light);border-radius:20px;padding:32px;border:1.5px solid var(--border);}
+
+/* FOOTER */
+footer{background:var(--navy);color:white;padding:48px 24px 24px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand h3{font-family:'Lora',serif;font-size:22px;margin-bottom:8px;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:16px;}
+.footer-social{display:flex;gap:10px;}
+.social-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;transition:background 0.15s;cursor:pointer;}
+.social-btn:hover{background:rgba(255,255,255,0.2);}
+.footer-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.5);margin-bottom:14px;}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:8px;transition:color 0.15s;}
+.footer-col a:hover{color:white;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.5);}
+.footer-badges{display:flex;gap:10px;}
+.footer-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,0.7);font-weight:600;}
+
+/* SUCCESS MSG */
+.success-msg{display:none;background:var(--green-light);border:1.5px solid var(--green);border-radius:10px;padding:16px;text-align:center;margin-top:12px;}
+.success-msg p{color:var(--green);font-weight:700;font-size:14px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .counties-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:36px;}
+}
+@media(max-width:600px){
+  .services-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .counties-grid{grid-template-columns:repeat(2,1fr);}
+  .nav-links{display:none;}
+  .form-row{grid-template-columns:1fr;}
+  .hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-name">4U Solutions</div>
+      <div class="nav-logo-tag">Oakland County, MI</div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="tel:8103220939" class="nav-phone">📞 (810) 322-0939</a>
+      <a href="#estimate" class="nav-cta">Free Estimate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Serving Oakland County & Surrounding Areas</div>
+      <h1>Oakland County's Trusted <span>Gutter & Exterior</span> Experts</h1>
+      <p class="hero-sub">From seamless gutter installation to professional cleanouts and guards — we protect your home from water damage. Veteran owned, locally operated, satisfaction guaranteed.</p>
+      <div class="hero-btns">
+        <a href="#estimate" class="btn-primary">📋 Get a Free Estimate</a>
+        <a href="tel:8103220939" class="btn-secondary">📞 Call Us Now</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="trust-icon">🎖️</span>Veteran Owned</div>
+        <div class="trust-item"><span class="trust-icon">📍</span>Locally Operated</div>
+        <div class="trust-item"><span class="trust-icon">⭐</span>5-Star Rated</div>
+        <div class="trust-item"><span class="trust-icon">✅</span>Free Estimates</div>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-form-card" id="estimate">
+      <div class="form-title">Get Your Free Estimate</div>
+      <div class="form-sub">We'll reach out within 24 hours to schedule your appointment.</div>
+      <form id="estimate-form" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name <span>*</span></label>
+            <input class="form-input" type="text" placeholder="Jackson" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name <span>*</span></label>
+            <input class="form-input" type="text" placeholder="DeRuiter" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number <span>*</span></label>
+          <input class="form-input" type="tel" placeholder="(810) 555-0000" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address <span>*</span></label>
+          <input class="form-input" type="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Property Address <span>*</span></label>
+          <input class="form-input" type="text" placeholder="123 Main St, Clarkston, MI" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Needed <span>*</span></label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Select a service...</option>
+            <optgroup label="Gutter Services">
+              <option>Seamless Gutter Installation</option>
+              <option>Gutter Guard Installation</option>
+              <option>Gutter Cleaning / Cleanout</option>
+              <option>Gutter Repair</option>
+              <option>Downspout Repair / Installation</option>
+            </optgroup>
+            <optgroup label="Exterior Cleaning">
+              <option>Roof Washing</option>
+              <option>Home / House Washing</option>
+              <option>Driveway Washing</option>
+              <option>Driveway Sealing</option>
+            </optgroup>
+            <option>Not Sure — Need Inspection</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Additional Notes</label>
+          <textarea class="form-input" rows="2" placeholder="Anything else we should know..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">📋 Request My Free Estimate →</button>
+        <p class="form-note">🔒 Your info is private. No spam, ever.</p>
+      </form>
+      <div class="success-msg" id="success-msg">
+        <p>✅ Request received! We'll contact you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-bar-item"><span class="trust-bar-icon">🎖️</span><span class="trust-bar-text">Veteran Owned & Operated</span></div>
+    <div class="trust-bar-item"><span class="trust-bar-icon">📍</span><span class="trust-bar-text">Serving Oakland County & Surrounding Areas</span></div>
+    <div class="trust-bar-item"><span class="trust-bar-icon">⭐</span><span class="trust-bar-text">5-Star Google & Facebook Rating</span></div>
+    <div class="trust-bar-item"><span class="trust-bar-icon">💳</span><span class="trust-bar-text">Accepts All Major Credit Cards</span></div>
+    <div class="trust-bar-item"><span class="trust-bar-icon">📋</span><span class="trust-bar-text">Free Estimates — No Obligation</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From new seamless installations to annual cleanouts, we keep your gutters working perfectly all year round.</p>
+    <div class="services-grid">
+      <div class="service-card" onclick="openService('seamless')">
+        <div class="service-icon">🏠</div>
+        <div class="service-name">Seamless Gutter Installation</div>
+        <div class="service-desc">Custom-fit seamless aluminum gutters in a variety of colors and sizes. Built on-site for a perfect fit — no leaky seams.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('guards')">
+        <div class="service-icon">🛡️</div>
+        <div class="service-name">Gutter Guard Installation</div>
+        <div class="service-desc">Keep leaves and debris out for good. Our professional-grade guards reduce maintenance and extend gutter life significantly.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('cleaning')">
+        <div class="service-icon">🧹</div>
+        <div class="service-name">Gutter Cleaning & Cleanouts</div>
+        <div class="service-desc">Thorough cleaning of all debris, leaves, and buildup. We flush downspouts and ensure everything flows properly.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('repair')">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">Gutter Repair</div>
+        <div class="service-desc">Sagging gutters, leaks, loose hangers, or fascia damage — we diagnose and fix it right the first time.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('washing')">
+        <div class="service-icon">🏡</div>
+        <div class="service-name">Exterior & Home Washing</div>
+        <div class="service-desc">Safe soft wash systems that remove mold, mildew, and grime from your siding, roof, and driveway without damage.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('roof')">
+        <div class="service-icon">🚿</div>
+        <div class="service-name">Roof & Driveway Washing</div>
+        <div class="service-desc">Professional pressure and soft wash cleaning to restore curb appeal and protect your surfaces from long-term damage.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+    </div>
+
+    <!-- SERVICE MODAL -->
+    <div id="service-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;padding:20px;" onclick="closeServiceModal(event)">
+      <div style="background:white;border-radius:20px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;position:relative;" onclick="event.stopPropagation()">
+        <button onclick="closeServiceModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--muted);line-height:1;">×</button>
+        <div id="service-modal-content" style="padding:36px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section id="about" style="background:var(--light);">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div class="section-label">About 4U Solutions</div>
+        <h2 class="section-title">Oakland County's Neighborhood Gutter Experts</h2>
+        <p style="font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:20px;">4U Solutions has been protecting Southeast Michigan homes for over 5 years. With more than 12 years of hands-on industry experience, our team knows exactly how to diagnose and solve any gutter or exterior problem — right the first time.</p>
+        <p style="font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:28px;">As a veteran-owned, locally operated company, we treat every home like our own. We serve homeowners, builders, general contractors, and real estate professionals across Oakland, Genesee, Lapeer, Macomb, and Wayne counties.</p>
+        <a href="#estimate" class="btn-primary" style="display:inline-flex;">Get a Free Estimate →</a>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">🎖️</div>
+          <div><div class="why-title">Veteran Owned</div><div class="why-desc">Proud to bring military discipline and work ethic to every job site.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📍</div>
+          <div><div class="why-title">Locally Operated</div><div class="why-desc">We live and work right here in Oakland County — your neighbors.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">✅</div>
+          <div><div class="why-title">Satisfaction Guaranteed</div><div class="why-desc">We don't leave until the job is done right and you're happy.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💲</div>
+          <div><div class="why-title">Free Estimates</div><div class="why-desc">No pressure, no obligation. Get a clear quote before any work begins.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💳</div>
+          <div><div class="why-title">Easy Payment</div><div class="why-desc">We accept all major credit cards and offer flexible payment options.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div><div class="why-title">Fast Response</div><div class="why-desc">We respond within 24 hours and schedule quickly — no long waits.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-bg">
+  <div class="section-inner">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Before & After Gallery</h2>
+    <p class="section-sub">Real jobs, real results. See the quality of our work across Oakland County homes.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_20230927_081411-3.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_20230927_081411-3.jpg" alt="Gutter installation" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_20230927_081411-4.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_20230927_081411-4.jpg" alt="Gutter work" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20231102_194543834-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20231102_194543834-scaled.jpg" alt="Gutter cleaning" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🧹</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20231103_194904924-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20231103_194904924-scaled.jpg" alt="Seamless gutters" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🛡️</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20230723_235437095-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20230723_235437095-scaled.jpg" alt="Gutter guards" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏡</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220623_143949371-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220623_143949371-scaled.jpg" alt="Exterior cleaning" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🚿</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220623_134155286-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220623_134155286-scaled.jpg" alt="Home washing" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20230111_213110969-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20230111_213110969-scaled.jpg" alt="Gutter installation" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🔧</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220430_201029419-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220430_201029419-scaled.jpg" alt="Gutter work" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220421_180141658-scaled.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220421_180141658-scaled.jpg" alt="Exterior work" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏡</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_0170.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_0170.jpg" alt="Gutter installation" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🔧</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_0069-1.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_0069-1.jpg" alt="Gutter guards" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🛡️</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_0066-1.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_0066-1.jpg" alt="Seamless gutters" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_0071.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_0071.jpg" alt="Gutter cleanout" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🧹</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/IMG_0183-1.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/IMG_0183-1.jpg" alt="Finished gutters" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>✅</div>'"></div>
+      <div class="gallery-item" onclick="openPhoto('https://4usolutions.org/wp-content/uploads/2024/02/gutters-half-round-4-1536x1157.jpg')"><img src="https://4usolutions.org/wp-content/uploads/2024/02/gutters-half-round-4-1536x1157.jpg" alt="Half round gutters" loading="lazy" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>🏠</div>'"></div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;cursor:pointer;" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+      <div style="position:absolute;top:20px;right:28px;color:white;font-size:40px;cursor:pointer;line-height:1;" onclick="closeLightbox()">×</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-label">What Customers Say</div>
+    <h2 class="section-title">5-Star Reviews</h2>
+    <p class="section-sub">Don't just take our word for it — here's what our Oakland County neighbors are saying.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"After a relentless search, we found the perfect solution for our gutters. Their installation transformed our home. No more worries about rain! Highly recommend their expertise."</div>
+        <div class="review-author">Abisai Zepeda</div>
+        <div class="review-location">Oakland County, MI</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"When my gutters gave up during a storm, they swiftly came to the rescue. The repair was impeccable, and their dedication saved us from further damage."</div>
+        <div class="review-author">Cody Butchers</div>
+        <div class="review-location">Oakland County, MI</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Our gutters were a mess until they stepped in. Regular maintenance has kept them flowing flawlessly, and their attention to detail has exceeded our expectations."</div>
+        <div class="review-author">Mr. Madi</div>
+        <div class="review-location">Oakland County, MI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS SERVED -->
+<section class="areas-bg" style="padding:80px 24px;">
+  <div class="section-inner">
+    <div class="section-label" style="color:rgba(255,255,255,0.5);">Coverage Area</div>
+    <h2 class="section-title areas-title">Areas We Serve</h2>
+    <p class="section-sub areas-sub">Proudly serving homeowners and contractors across 5 Southeast Michigan counties.</p>
+    <div class="counties-grid">
+      <div class="county-card">
+        <div class="county-name">Oakland County</div>
+        <div class="county-cities">Clarkston · Waterford · Rochester · Novi · Bloomfield · Lake Orion · Commerce</div>
+      </div>
+      <div class="county-card">
+        <div class="county-name">Genesee County</div>
+        <div class="county-cities">Flint · Fenton · Flushing · Davison · Burton · Grand Blanc · Linden</div>
+      </div>
+      <div class="county-card">
+        <div class="county-name">Lapeer County</div>
+        <div class="county-cities">Lapeer · Almont · Attica · Dryden · Imlay City · North Branch</div>
+      </div>
+      <div class="county-card">
+        <div class="county-name">Macomb County</div>
+        <div class="county-cities">Shelby · Chesterfield · Clinton · Warren · Sterling · Utica · Macomb</div>
+      </div>
+      <div class="county-card">
+        <div class="county-name">Wayne County</div>
+        <div class="county-cities">Canton · Livonia · Northville · Westland · Dearborn · Plymouth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-section">
+  <div class="section-title cta-title">Ready to Protect Your Home?</div>
+  <p class="cta-sub">Get a free, no-obligation estimate today. We respond within 24 hours.</p>
+  <div class="cta-btns">
+    <a href="#estimate" class="btn-white">📋 Get a Free Estimate</a>
+    <a href="tel:8103220939" class="btn-outline-white">📞 Call (810) 322-0939</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>We'd Love to Hear From You</h3>
+        <p style="color:var(--muted);margin-bottom:28px;line-height:1.7;">Whether you need a quick cleanout or a full gutter installation, our team is ready to help. Reach out by phone, email, or fill out the form and we'll get back to you fast.</p>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:8103220939">(810) 322-0939</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:hello@4usolutions.org">hello@4usolutions.org</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Service Area</div><div class="contact-value">Oakland County & Surrounding Southeast MI</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><div class="contact-label">Hours</div><div class="contact-value">Mon – Fri: 8AM – 6PM</div></div>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <div class="form-title" style="margin-bottom:6px;">Send Us a Message</div>
+        <div class="form-sub" style="margin-bottom:20px;">Fill out the form and we'll respond within 24 hours.</div>
+        <form onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name <span>*</span></label>
+              <input class="form-input" type="text" required placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name <span>*</span></label>
+              <input class="form-input" type="text" required placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone <span>*</span></label>
+            <input class="form-input" type="tel" required placeholder="(810) 555-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email <span>*</span></label>
+            <input class="form-input" type="email" required placeholder="you@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Property Address <span>*</span></label>
+            <input class="form-input" type="text" required placeholder="123 Main St, City, MI">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Service Needed <span>*</span></label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Seamless Gutter Installation</option>
+              <option>Gutter Guard Installation</option>
+              <option>Gutter Cleaning / Cleanout</option>
+              <option>Gutter Repair</option>
+              <option>Roof Washing</option>
+              <option>Home / House Washing</option>
+              <option>Driveway Washing</option>
+              <option>Not Sure — Need Inspection</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-input" rows="3" placeholder="Tell us more about your project..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>4U Solutions</h3>
+        <p>Oakland County's trusted gutter and exterior service experts. Veteran owned, locally operated, satisfaction guaranteed.</p>
+        <div class="footer-social">
+          <div class="social-btn">f</div>
+          <div class="social-btn">in</div>
+          <div class="social-btn">📷</div>
+          <div class="social-btn">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Seamless Gutters</a>
+        <a href="#services">Gutter Guards</a>
+        <a href="#services">Gutter Cleaning</a>
+        <a href="#services">Gutter Repair</a>
+        <a href="#services">Roof Washing</a>
+        <a href="#services">Home Washing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="#estimate">Free Estimate</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:8103220939">(810) 322-0939</a>
+        <a href="mailto:hello@4usolutions.org">hello@4usolutions.org</a>
+        <a href="#areas">Oakland County, MI</a>
+        <a href="#areas">Mon–Fri 8AM–6PM</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 4U Solutions. All rights reserved. | <a href="#" style="color:rgba(255,255,255,0.5);">Privacy Policy</a></p>
+      <div class="footer-badges">
+        <div class="footer-badge">🎖️ Veteran Owned</div>
+        <div class="footer-badge">📍 Oakland County, MI</div>
+        <div class="footer-badge">⭐ 5-Star Rated</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('estimate-form').style.display='none';
+  document.getElementById('success-msg').style.display='block';
+}
+function submitContact(e){
+  e.preventDefault();
+  e.target.innerHTML='<div style="text-align:center;padding:20px;color:var(--green);font-weight:700;">✅ Message sent! We\'ll be in touch within 24 hours.</div>';
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+// LIGHTBOX
+function openPhoto(src){
+  const lb=document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src=src;
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeServiceModal();}});
+
+// SERVICE MODALS
+const services={
+  seamless:{
+    icon:'🏠',
+    name:'Seamless Gutter Installation',
+    desc:'Custom-fabricated on-site for your exact home dimensions — no joints, no leaks, no problems.',
+    details:[
+      'Fabricated on-site for a perfect fit every time',
+      'Available in 5" and 6" K-style profiles',
+      'Wide range of colors to match your home',
+      'Aluminum construction — rust-proof and lightweight',
+      'Commercial and residential installation',
+      'Built to withstand Michigan weather year-round',
+      'Proper slope and drainage planning included',
+      'Old gutter removal available'
+    ],
+    why:'Seamless gutters are the gold standard for water protection. Unlike sectional gutters, our seamless aluminum gutters are custom-built on your property using a professional gutter machine — meaning zero seams along the run, zero leak points, and a perfect color match to your home.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/gutters-half-round-4-1536x1157.jpg'
+  },
+  guards:{
+    icon:'🛡️',
+    name:'Gutter Guard Installation',
+    desc:'Stop cleaning your gutters every year. Our guards keep debris out and water flowing freely.',
+    details:[
+      'Professional-grade micro-mesh and solid cover options',
+      'Compatible with existing gutters',
+      'Reduces cleaning to once every few years',
+      'Prevents clogs, overflows, and ice dams',
+      'Keeps out leaves, pine needles, and debris',
+      'Pest and bird deterrent',
+      'Backed by manufacturer warranty',
+      'Works with seamless and sectional gutters'
+    ],
+    why:'Gutter guards are the smartest investment you can make after installing new gutters. They dramatically extend the life of your gutters, prevent basement flooding from overflows, and eliminate the need for dangerous ladder climbs every fall.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/IMG_0069-1.jpg'
+  },
+  cleaning:{
+    icon:'🧹',
+    name:'Gutter Cleaning & Cleanouts',
+    desc:'We remove all debris, flush your downspouts, and make sure water flows where it should.',
+    details:[
+      'Complete removal of leaves, debris, and buildup',
+      'Downspout flushing and clearing',
+      'Gutter inspection included with every cleaning',
+      'We bag and remove all debris',
+      'Check for proper slope and drainage',
+      'Identify any damage or potential problems',
+      'Recommended twice per year — spring and fall',
+      'Same-day service often available'
+    ],
+    why:'Clogged gutters are the #1 cause of basement flooding, foundation damage, and fascia rot. A $150 cleaning can save you thousands in repairs. We recommend cleanouts every spring and fall — especially in Oakland County where maples and oaks drop heavily.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/PXL_20231102_194543834-scaled.jpg'
+  },
+  repair:{
+    icon:'🔧',
+    name:'Gutter Repair',
+    desc:'Sagging, leaking, or pulling away from the house? We diagnose and fix it fast.',
+    details:[
+      'Sagging gutter rehang and realignment',
+      'Leak sealing at seams and end caps',
+      'Hanger and spike replacement',
+      'Fascia board repair and replacement',
+      'Downspout repair and repositioning',
+      'Corner and elbow replacement',
+      'Gutter slope correction',
+      'Emergency storm damage repair'
+    ],
+    why:'Small gutter problems become big expensive problems fast. A sagging section can pull your fascia board off the house. A leak at a seam can rot your soffit in one season. We fix it right the first time — and tell you honestly if replacement makes more sense than repair.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/IMG_0071.jpg'
+  },
+  washing:{
+    icon:'🏡',
+    name:'Exterior & Home Washing',
+    desc:'Soft wash technology removes mold, mildew, and grime safely without pressure damage.',
+    details:[
+      'Low-pressure soft wash system — no surface damage',
+      'Removes mold, mildew, algae, and staining',
+      'Safe for vinyl, wood, brick, and stucco',
+      'Full home exterior wash available',
+      'Deck and fence cleaning',
+      'Before-sale cleaning for real estate agents',
+      'New construction cleanup',
+      'Environmentally friendly cleaning solutions'
+    ],
+    why:'Power washing done wrong can damage siding, force water behind panels, and void warranties. Our soft wash approach uses the right pressure and the right solutions for each surface — getting your home cleaner and keeping it that way longer.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/PXL_20220623_143949371-scaled.jpg'
+  },
+  roof:{
+    icon:'🚿',
+    name:'Roof & Driveway Washing',
+    desc:'Restore your roof and driveway to like-new condition with our professional cleaning systems.',
+    details:[
+      'Soft wash roof cleaning — safe for all shingle types',
+      'Removes black streaks, moss, algae, and lichen',
+      'Extends roof lifespan significantly',
+      'Pressure washing for concrete driveways',
+      'Driveway sealing available after cleaning',
+      'Sidewalk and walkway cleaning',
+      'Before-sale curb appeal boost',
+      'Commercial parking lot cleaning available'
+    ],
+    why:'Those black streaks on your roof are actually a living organism called Gloeocapsa magma — it feeds on your shingles and shortens their life. Our soft wash treatment kills it at the root and keeps your roof looking great for years. Combined with a driveway wash, it\'s the best curb appeal investment you can make.',
+    img:'https://4usolutions.org/wp-content/uploads/2023/09/roof-cleANING.jpg'
+  }
+};
+
+function openService(id){
+  const s=services[id];
+  if(!s)return;
+  document.getElementById('service-modal-content').innerHTML=`
+    <div style="font-size:40px;margin-bottom:12px;">${s.icon}</div>
+    <h2 style="font-family:'Lora',serif;font-size:26px;color:var(--navy);margin-bottom:8px;">${s.name}</h2>
+    <p style="color:var(--muted);font-size:15px;margin-bottom:20px;line-height:1.7;">${s.desc}</p>
+    <img src="${s.img}" alt="${s.name}" style="width:100%;border-radius:12px;margin-bottom:20px;max-height:220px;object-fit:cover;" onerror="this.style.display='none'">
+    <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;">What's Included:</h3>
+    <ul style="list-style:none;margin-bottom:20px;">
+      ${s.details.map(d=>`<li style="display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:14px;color:var(--text);"><span style="color:var(--green);font-size:16px;flex-shrink:0;">✓</span>${d}</li>`).join('')}
+    </ul>
+    <div style="background:var(--light);border-radius:12px;padding:16px;margin-bottom:24px;border-left:3px solid var(--blue);">
+      <p style="font-size:13px;color:var(--muted);line-height:1.7;">${s.why}</p>
+    </div>
+    <a href="#estimate" onclick="closeServiceModal()" style="display:block;background:var(--orange);color:white;text-align:center;padding:14px;border-radius:10px;font-weight:700;font-size:15px;">📋 Get a Free Estimate →</a>
+    <a href="tel:8103220939" style="display:block;text-align:center;padding:12px;margin-top:10px;font-size:14px;font-weight:600;color:var(--navy);">📞 Call (810) 322-0939</a>
+  `;
+  const modal=document.getElementById('service-modal');
+  modal.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeServiceModal(e){
+  if(e&&e.target!==document.getElementById('service-modal'))return;
+  document.getElementById('service-modal').style.display='none';
+  document.body.style.overflow='';
+}
+document.getElementById('service-modal').addEventListener('click',function(e){
+  if(e.target===this){this.style.display='none';document.body.style.overflow='';}
+});
+</script>
+</body>
+</html>
