@@ -640,8 +640,21 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
 <script>
 function submitForm(e){
   e.preventDefault();
-  document.getElementById('estimate-form').style.display='none';
-  document.getElementById('success-msg').style.display='block';
+  const form = document.getElementById('estimate-form');
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  })
+  .catch(() => {
+    form.style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  });
 }
 function submitContact(e){
   e.preventDefault();
