@@ -247,28 +247,28 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">First Name <span>*</span></label>
-            <input class="form-input" type="text" placeholder="Jackson" required>
+            <input class="form-input" type="text" name="first-name" placeholder="Jackson" required>
           </div>
           <div class="form-group">
             <label class="form-label">Last Name <span>*</span></label>
-            <input class="form-input" type="text" placeholder="DeRuiter" required>
+            <input class="form-input" type="text" name="last-name" placeholder="DeRuiter" required>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Phone Number <span>*</span></label>
-          <input class="form-input" type="tel" placeholder="(810) 555-0000" required>
+          <input class="form-input" type="tel" name="phone" placeholder="(810) 555-0000" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email Address <span>*</span></label>
-          <input class="form-input" type="email" placeholder="you@email.com" required>
+          <input class="form-input" type="email" name="email" placeholder="you@email.com" required>
         </div>
         <div class="form-group">
           <label class="form-label">Property Address <span>*</span></label>
-          <input class="form-input" type="text" placeholder="123 Main St, Clarkston, MI" required>
+          <input class="form-input" type="text" name="address" placeholder="123 Main St, Clarkston, MI" required>
         </div>
         <div class="form-group">
           <label class="form-label">Service Needed <span>*</span></label>
-          <select class="form-select" required>
+          <select class="form-select" name="service" required>
             <option value="" disabled selected>Select a service...</option>
             <optgroup label="Gutter Services">
               <option>Seamless Gutter Installation</option>
@@ -288,7 +288,7 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
         </div>
         <div class="form-group">
           <label class="form-label">Additional Notes</label>
-          <textarea class="form-input" rows="2" placeholder="Anything else we should know..."></textarea>
+          <textarea class="form-input" name="notes" rows="2" placeholder="Anything else we should know..."></textarea>
         </div>
         <button type="submit" class="form-submit">📋 Request My Free Estimate →</button>
         <p class="form-note">🔒 Your info is private. No spam, ever.</p>
@@ -564,7 +564,7 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
           </div>
           <div class="form-group">
             <label class="form-label">Service Needed <span>*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="service" required>
               <option value="" disabled selected>Select a service...</option>
               <option>Seamless Gutter Installation</option>
               <option>Gutter Guard Installation</option>
