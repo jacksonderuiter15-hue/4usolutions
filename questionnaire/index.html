@@ -274,15 +274,17 @@
                 <label for="svc8"><span class="box"></span> Not sure — need advice</label>
               </div>
             </div>
+            <p class="field-error" id="serviceError" style="display:none;color:#f87171;font-size:13px;margin-top:10px;">Please select at least one service.</p>
           </fieldset>
 
           <fieldset>
             <legend>How soon are you looking to get this done?</legend>
             <div class="radio-row">
-              <label><input type="radio" name="timeline" value="ASAP"> ASAP</label>
-              <label><input type="radio" name="timeline" value="Within a month"> Within a month</label>
-              <label><input type="radio" name="timeline" value="Just researching"> Just researching</label>
+              <label><input type="radio" name="timeline" value="ASAP" required> ASAP</label>
+              <label><input type="radio" name="timeline" value="Within a month" required> Within a month</label>
+              <label><input type="radio" name="timeline" value="Just researching" required> Just researching</label>
             </div>
+            <p class="field-error" id="timelineError" style="display:none;color:#f87171;font-size:13px;margin-top:8px;">Please select a timeline.</p>
           </fieldset>
 
           <fieldset>
@@ -299,15 +301,15 @@
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="jane@email.com">
+              <input type="email" id="email" name="email" placeholder="jane@email.com" required>
             </div>
             <div class="field">
               <label for="address">Property address</label>
-              <input type="text" id="address" name="address" placeholder="Street, City, MI">
+              <input type="text" id="address" name="address" placeholder="Street, City, MI" required>
             </div>
             <div class="field">
               <label for="notes">Anything else we should know?</label>
-              <textarea id="notes" name="notes" placeholder="Number of stories, roof type, specific concerns, etc."></textarea>
+              <textarea id="notes" name="notes" placeholder="Number of stories, roof type, specific concerns, etc." required></textarea>
             </div>
           </fieldset>
 
@@ -338,8 +340,26 @@
 
 <script>
   const form = document.getElementById('questForm');
+  const serviceBoxes = document.querySelectorAll('input[name="service"]');
+  const serviceError = document.getElementById('serviceError');
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
+
+    // Custom check: at least one service must be selected
+    const anyServiceChecked = Array.from(serviceBoxes).some(cb => cb.checked);
+    if (!anyServiceChecked) {
+      serviceError.style.display = 'block';
+      document.querySelector('.service-grid').scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    } else {
+      serviceError.style.display = 'none';
+    }
+
+    // Native required fields (name, phone, email, address, notes, timeline)
+    // will block submission automatically via browser validation before this point,
+    // since this listener only runs once the form is otherwise valid.
+
     // TODO: wire this up to Formspree / Netlify Forms / your CRM endpoint.
     document.getElementById('formArea').classList.add('hide');
     document.getElementById('successArea').classList.add('show');
