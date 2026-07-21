@@ -79,6 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .form-submit{width:100%;background:var(--orange);color:white;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.15s;margin-top:4px;}
 .form-submit:hover{background:#c2410c;}
+.form-submit:disabled{opacity:0.7;cursor:not-allowed;}
 .form-note{text-align:center;font-size:11px;color:var(--muted);margin-top:10px;}
 
 /* SECTION STYLES */
@@ -245,32 +246,33 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
     <div class="hero-form-card" id="estimate">
       <div class="form-title">Get Your Free Estimate</div>
       <div class="form-sub">We'll reach out within 24 hours to schedule your appointment.</div>
-      <form id="estimate-form" onsubmit="submitForm(event)">
+      <form id="estimate-form" action="https://formspree.io/f/xpqvljez" method="POST">
+        <input type="hidden" name="_subject" value="New OMG Gutters estimate request (Homepage hero form)">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">First Name <span>*</span></label>
-            <input class="form-input" type="text" placeholder="Jackson" required>
+            <input class="form-input" type="text" name="first_name" placeholder="Jackson" required>
           </div>
           <div class="form-group">
             <label class="form-label">Last Name <span>*</span></label>
-            <input class="form-input" type="text" placeholder="DeRuiter" required>
+            <input class="form-input" type="text" name="last_name" placeholder="DeRuiter" required>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Phone Number <span>*</span></label>
-          <input class="form-input" type="tel" placeholder="(810) 555-0000" required>
+          <input class="form-input" type="tel" name="phone" placeholder="(810) 555-0000" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email Address <span>*</span></label>
-          <input class="form-input" type="email" placeholder="you@email.com" required>
+          <input class="form-input" type="email" name="email" placeholder="you@email.com" required>
         </div>
         <div class="form-group">
           <label class="form-label">Property Address <span>*</span></label>
-          <input class="form-input" type="text" placeholder="123 Main St, Clarkston, MI" required>
+          <input class="form-input" type="text" name="address" placeholder="123 Main St, Clarkston, MI" required>
         </div>
         <div class="form-group">
           <label class="form-label">Service Needed <span>*</span></label>
-          <select class="form-select" required>
+          <select class="form-select" name="service" required>
             <option value="" disabled selected>Select a service...</option>
             <optgroup label="Gutter Services">
               <option>Seamless Gutter Installation</option>
@@ -285,12 +287,16 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
               <option>Driveway Washing</option>
               <option>Driveway Sealing</option>
             </optgroup>
+            <optgroup label="More Services">
+              <option>Roof Installation</option>
+              <option>Exterior Painting</option>
+            </optgroup>
             <option>Not Sure — Need Inspection</option>
           </select>
         </div>
         <div class="form-group">
           <label class="form-label">Additional Notes</label>
-          <textarea class="form-input" rows="2" placeholder="Anything else we should know..."></textarea>
+          <textarea class="form-input" name="notes" rows="2" placeholder="Anything else we should know..."></textarea>
         </div>
         <button type="submit" class="form-submit">📋 Request My Free Estimate →</button>
         <p class="form-note">🔒 Your info is private. No spam, ever.</p>
@@ -354,6 +360,18 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
         <div class="service-icon">🚿</div>
         <div class="service-name">Roof & Driveway Washing</div>
         <div class="service-desc">Professional pressure and soft wash cleaning to restore curb appeal and protect your surfaces from long-term damage.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('roofinstall')">
+        <div class="service-icon">🏘️</div>
+        <div class="service-name">Roof Installation</div>
+        <div class="service-desc">Full roof replacement and new installations, built to hold up against everything Michigan weather throws at it.</div>
+        <div class="service-link">Learn More →</div>
+      </div>
+      <div class="service-card" onclick="openService('painting')">
+        <div class="service-icon">🎨</div>
+        <div class="service-name">Exterior Painting</div>
+        <div class="service-desc">Fresh, weather-resistant exterior painting that boosts curb appeal and protects your siding and trim for years to come.</div>
         <div class="service-link">Learn More →</div>
       </div>
     </div>
@@ -527,7 +545,7 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
         </div>
         <div class="contact-item">
           <div class="contact-icon">📧</div>
-          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:hello@4usolutions.org">hello@4usolutions.org</a></div></div>
+          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:hello@omggutters.com">hello@omggutters.com</a></div></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
@@ -541,32 +559,33 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
       <div class="contact-form-card">
         <div class="form-title" style="margin-bottom:6px;">Send Us a Message</div>
         <div class="form-sub" style="margin-bottom:20px;">Fill out the form and we'll respond within 24 hours.</div>
-        <form onsubmit="submitContact(event)">
+        <form id="contact-form" action="https://formspree.io/f/xpqvljez" method="POST">
+          <input type="hidden" name="_subject" value="New OMG Gutters message (Contact form)">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label">First Name <span>*</span></label>
-              <input class="form-input" type="text" required placeholder="First name">
+              <input class="form-input" type="text" name="first_name" required placeholder="First name">
             </div>
             <div class="form-group">
               <label class="form-label">Last Name <span>*</span></label>
-              <input class="form-input" type="text" required placeholder="Last name">
+              <input class="form-input" type="text" name="last_name" required placeholder="Last name">
             </div>
           </div>
           <div class="form-group">
             <label class="form-label">Phone <span>*</span></label>
-            <input class="form-input" type="tel" required placeholder="(810) 555-0000">
+            <input class="form-input" type="tel" name="phone" required placeholder="(810) 555-0000">
           </div>
           <div class="form-group">
             <label class="form-label">Email <span>*</span></label>
-            <input class="form-input" type="email" required placeholder="you@email.com">
+            <input class="form-input" type="email" name="email" required placeholder="you@email.com">
           </div>
           <div class="form-group">
             <label class="form-label">Property Address <span>*</span></label>
-            <input class="form-input" type="text" required placeholder="123 Main St, City, MI">
+            <input class="form-input" type="text" name="address" required placeholder="123 Main St, City, MI">
           </div>
           <div class="form-group">
             <label class="form-label">Service Needed <span>*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="service" required>
               <option value="" disabled selected>Select a service...</option>
               <option>Seamless Gutter Installation</option>
               <option>Gutter Guard Installation</option>
@@ -575,12 +594,14 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
               <option>Roof Washing</option>
               <option>Home / House Washing</option>
               <option>Driveway Washing</option>
+              <option>Roof Installation</option>
+              <option>Exterior Painting</option>
               <option>Not Sure — Need Inspection</option>
             </select>
           </div>
           <div class="form-group">
             <label class="form-label">Message</label>
-            <textarea class="form-input" rows="3" placeholder="Tell us more about your project..."></textarea>
+            <textarea class="form-input" name="message" rows="3" placeholder="Tell us more about your project..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Message →</button>
         </form>
@@ -623,7 +644,7 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:8103220939">(810) 322-0939</a>
-        <a href="mailto:hello@4usolutions.org">hello@4usolutions.org</a>
+        <a href="mailto:hello@omggutters.com">hello@omggutters.com</a>
         <a href="#areas">Oakland, Macomb & Genesee, MI</a>
         <a href="#areas">Mon–Fri 8AM–6PM</a>
       </div>
@@ -640,15 +661,43 @@ footer{background:var(--navy);color:white;padding:48px 24px 24px;}
 </footer>
 
 <script>
-function submitForm(e){
-  e.preventDefault();
+function wireForm(formEl, successCallback){
+  formEl.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = formEl.querySelector('button[type=submit]');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch(formEl.action, {
+      method: 'POST',
+      body: new FormData(formEl),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if(response.ok){
+        successCallback();
+      } else {
+        throw new Error('Submission failed');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert("Something went wrong sending your request. Please call us directly at (810) 322-0939, or try again.");
+    });
+  });
+}
+
+wireForm(document.getElementById('estimate-form'), function(){
   document.getElementById('estimate-form').style.display='none';
   document.getElementById('success-msg').style.display='block';
-}
-function submitContact(e){
-  e.preventDefault();
-  e.target.innerHTML='<div style="text-align:center;padding:20px;color:var(--green);font-weight:700;">✅ Message sent! We\'ll be in touch within 24 hours.</div>';
-}
+});
+
+wireForm(document.getElementById('contact-form'), function(){
+  document.getElementById('contact-form').innerHTML='<div style="text-align:center;padding:20px;color:var(--green);font-weight:700;">✅ Message sent! We\'ll be in touch within 24 hours.</div>';
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const target=document.querySelector(a.getAttribute('href'));
@@ -772,6 +821,40 @@ const services={
     ],
     why:'Those black streaks on your roof are actually a living organism called Gloeocapsa magma — it feeds on your shingles and shortens their life. Our soft wash treatment kills it at the root and keeps your roof looking great for years. Combined with a driveway wash, it\'s the best curb appeal investment you can make.',
     img:'https://4usolutions.org/wp-content/uploads/2023/09/roof-cleANING.jpg'
+  },
+  roofinstall:{
+    icon:'🏘️',
+    name:'Roof Installation',
+    desc:'Full roof replacement and new installations built to last through Michigan winters, storms, and everything between.',
+    details:[
+      'Complete tear-off and new roof installation',
+      'Asphalt shingle, architectural, and metal options',
+      'Proper ventilation and underlayment included',
+      'Ice and water shield in vulnerable areas',
+      'Flashing replacement around chimneys and vents',
+      'Old material removal and full cleanup',
+      'Manufacturer and workmanship warranty options',
+      'Free on-site roof inspection with every quote'
+    ],
+    why:'A roof is one of the biggest investments in your home — and one of the most important for keeping water damage out. We handle everything from a single storm-damaged section to a full tear-off and replacement, using materials built for Michigan\'s freeze-thaw cycles.',
+    img:'https://4usolutions.org/wp-content/uploads/2023/09/roof-cleANING.jpg'
+  },
+  painting:{
+    icon:'🎨',
+    name:'Exterior Painting',
+    desc:'Fresh, weather-resistant exterior painting that boosts curb appeal and protects your siding and trim for years to come.',
+    details:[
+      'Full exterior house painting',
+      'Trim, fascia, and soffit painting',
+      'Pressure washing and surface prep included',
+      'Scraping and priming of peeling or bare areas',
+      'Premium exterior-grade paints built for Michigan weather',
+      'Color consultation available',
+      'Deck, fence, and shutter painting available',
+      'Clean, careful work around landscaping and windows'
+    ],
+    why:'A fresh coat of exterior paint does more than look good — it protects your siding and trim from moisture, UV damage, and rot. We prep every surface properly first, so the finish actually lasts instead of peeling within a year or two.',
+    img:'https://4usolutions.org/wp-content/uploads/2024/02/IMG_0183-1.jpg'
   }
 };
 
