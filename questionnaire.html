@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Free Estimate — OMG Gutters</title>
+<meta name="description" content="Tell us what your home needs — gutters, soft wash, windows, or hardscape — and OMG Gutters will get back to you with a free estimate.">
+<style>
+  :root{
+    --navy-950:#0c1730;
+    --navy-900:#0f1e3d;
+    --navy-800:#16294f;
+    --navy-700:#1e3a6a;
+    --sky:#5b9bf0;
+    --yellow:#f5c518;
+    --orange:#ea580c;
+    --orange-dark:#c2410c;
+    --white:#ffffff;
+    --mist:#c7d2e6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    background:var(--navy-900);
+    color:var(--white);
+    line-height:1.5;
+  }
+  h1,h2,h3{
+    font-family:Georgia, 'Times New Roman', serif;
+    margin:0 0 .4em 0;
+    line-height:1.15;
+  }
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  /* Top bar */
+  header{
+    background:var(--white);
+    color:var(--navy-900);
+    padding:16px 0;
+  }
+  .header-row{
+    max-width:1100px;margin:0 auto;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+  .brand{display:flex;align-items:baseline;gap:8px;}
+  .brand .omg{font-family:Georgia, serif;font-weight:700;color:var(--orange-dark);font-size:26px;letter-spacing:.5px;}
+  .brand .gutters{font-family:Georgia, serif;font-weight:700;color:var(--navy-900);font-size:26px;}
+  .brand-sub{font-size:11px;letter-spacing:1.5px;color:#5a6478;text-transform:uppercase;margin-top:-4px;}
+  .home-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:14px;font-weight:600;color:var(--navy-900);
+    text-decoration:none;border:2px solid var(--navy-900);
+    padding:8px 16px;border-radius:999px;transition:.15s ease;
+  }
+  .home-link:hover{background:var(--navy-900);color:var(--white);}
+
+  /* Hero */
+  .hero{
+    padding:56px 0 40px;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at top, var(--navy-800) 0%, var(--navy-950) 70%);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    padding:8px 18px;border-radius:999px;font-size:13px;color:var(--mist);
+    margin-bottom:22px;
+  }
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:#3ed07a;}
+  .hero h1{font-size:38px;color:var(--white);}
+  .hero h1 span{color:var(--sky);}
+  .hero p{color:var(--mist);font-size:16px;max-width:520px;margin:14px auto 0;}
+
+  /* Form section */
+  main{padding:44px 0 80px;}
+  .card{
+    background:var(--navy-800);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:36px;
+  }
+  .card h2{font-size:24px;}
+  .card .lede{color:var(--mist);font-size:14.5px;margin-bottom:28px;}
+
+  fieldset{border:0;padding:0;margin:0 0 30px 0;}
+  legend{
+    font-family:Georgia, serif;
+    font-size:17px;font-weight:700;color:var(--yellow);
+    margin-bottom:14px;padding:0;
+  }
+
+  .service-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  @media(max-width:520px){.service-grid{grid-template-columns:1fr;}}
+
+  .service-option{
+    position:relative;
+  }
+  .service-option input{
+    position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;
+  }
+  .service-option label{
+    display:flex;align-items:center;gap:10px;
+    background:var(--navy-700);
+    border:2px solid transparent;
+    border-radius:10px;
+    padding:13px 14px;
+    font-size:14.5px;font-weight:600;
+    cursor:pointer;
+    transition:.15s ease;
+  }
+  .service-option label .box{
+    width:18px;height:18px;flex:0 0 18px;
+    border:2px solid var(--mist);border-radius:5px;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:.15s ease;
+  }
+  .service-option label .box::after{
+    content:"";width:9px;height:5px;
+    border-left:2.5px solid var(--navy-900);border-bottom:2.5px solid var(--navy-900);
+    transform:rotate(-45deg) translateY(-1px);opacity:0;
+  }
+  .service-option input:checked + label{
+    border-color:var(--yellow);background:rgba(245,197,24,.12);
+  }
+  .service-option input:checked + label .box{
+    background:var(--yellow);border-color:var(--yellow);
+  }
+  .service-option input:checked + label .box::after{opacity:1;}
+  .service-option input:focus-visible + label{outline:2px solid var(--sky);outline-offset:2px;}
+
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13.5px;font-weight:600;color:var(--mist);margin-bottom:7px;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:520px){.two-col{grid-template-columns:1fr;}}
+
+  input[type=text], input[type=email], input[type=tel], textarea, select{
+    width:100%;
+    background:var(--navy-900);
+    border:1.5px solid rgba(255,255,255,.15);
+    color:var(--white);
+    border-radius:9px;
+    padding:12px 14px;
+    font-size:15px;
+    font-family:inherit;
+  }
+  input::placeholder, textarea::placeholder{color:#6b7797;}
+  input:focus, textarea:focus, select:focus{
+    outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(91,155,240,.25);
+  }
+  textarea{resize:vertical;min-height:100px;}
+
+  .radio-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .radio-row label{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--navy-700);border-radius:999px;padding:9px 16px;
+    font-size:13.5px;font-weight:600;cursor:pointer;border:2px solid transparent;
+  }
+  .radio-row input{accent-color:var(--yellow);}
+  .radio-row input:checked ~ label{}
+  .radio-row label:has(input:checked){border-color:var(--yellow);background:rgba(245,197,24,.12);}
+
+  button.submit{
+    width:100%;
+    background:var(--orange);
+    color:var(--white);
+    border:0;border-radius:10px;
+    padding:16px;
+    font-size:16px;font-weight:700;
+    cursor:pointer;
+    transition:.15s ease;
+    margin-top:6px;
+  }
+  button.submit:hover{background:var(--orange-dark);}
+  .fine-print{font-size:12px;color:#7b87a5;text-align:center;margin-top:14px;}
+
+  .success{
+    display:none;
+    text-align:center;
+    padding:40px 10px;
+  }
+  .success.show{display:block;}
+  .success .check{
+    width:60px;height:60px;border-radius:50%;
+    background:#1f8a4c;margin:0 auto 18px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .success h2{font-size:22px;}
+  .success p{color:var(--mist);}
+  .success .home-btn{
+    display:inline-block;margin-top:20px;
+    background:var(--orange);color:var(--white);
+    text-decoration:none;font-weight:700;
+    padding:13px 28px;border-radius:999px;font-size:14.5px;
+  }
+  #formArea.hide{display:none;}
+
+  footer{
+    text-align:center;padding:30px 0 40px;color:#5a6478;font-size:13px;
+  }
+  footer a{color:var(--sky);text-decoration:none;font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <div class="brand">
+      <div>
+        <div><span class="omg">OMG</span> <span class="gutters">Gutters</span></div>
+        <div class="brand-sub">Oakland · Macomb · Genesee</div>
+      </div>
+    </div>
+    <a class="home-link" href="https://omggutters.com" target="_top">← Back to homepage</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pill"><span class="dot"></span> Free, no-obligation estimate</div>
+    <h1>What does your home <span>need help with?</span></h1>
+    <p>Answer a few quick questions and we'll follow up with a free estimate — usually within one business day.</p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <div class="card">
+
+      <div id="formArea">
+        <h2>Tell us about your project</h2>
+        <p class="lede">Pick everything that applies — most homeowners bundle two or three services together.</p>
+
+        <form id="questForm">
+          <fieldset>
+            <legend>Service(s) needed</legend>
+            <div class="service-grid">
+              <div class="service-option">
+                <input type="checkbox" id="svc1" name="service" value="Gutter Installation">
+                <label for="svc1"><span class="box"></span> Gutter Installation</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc2" name="service" value="Gutter Cleaning">
+                <label for="svc2"><span class="box"></span> Gutter Cleaning</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc3" name="service" value="Gutter Guards">
+                <label for="svc3"><span class="box"></span> Gutter Guards</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc4" name="service" value="Soft Wash / House Wash">
+                <label for="svc4"><span class="box"></span> Soft Wash / House Wash</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc5" name="service" value="Window Cleaning">
+                <label for="svc5"><span class="box"></span> Window Cleaning</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc6" name="service" value="Exterior Painting">
+                <label for="svc6"><span class="box"></span> Exterior Painting</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc7" name="service" value="Roof Installation">
+                <label for="svc7"><span class="box"></span> Roof Installation</label>
+              </div>
+              <div class="service-option">
+                <input type="checkbox" id="svc8" name="service" value="Not sure / Need advice">
+                <label for="svc8"><span class="box"></span> Not sure — need advice</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How soon are you looking to get this done?</legend>
+            <div class="radio-row">
+              <label><input type="radio" name="timeline" value="ASAP"> ASAP</label>
+              <label><input type="radio" name="timeline" value="Within a month"> Within a month</label>
+              <label><input type="radio" name="timeline" value="Just researching"> Just researching</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your info</legend>
+            <div class="two-col">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(810) 322-0939" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com">
+            </div>
+            <div class="field">
+              <label for="address">Property address</label>
+              <input type="text" id="address" name="address" placeholder="Street, City, MI">
+            </div>
+            <div class="field">
+              <label for="notes">Anything else we should know?</label>
+              <textarea id="notes" name="notes" placeholder="Number of stories, roof type, specific concerns, etc."></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="submit">Get My Free Estimate</button>
+          <p class="fine-print">We'll never sell your info. One of our team will text or call you back shortly.</p>
+        </form>
+      </div>
+
+      <div class="success" id="successArea">
+        <div class="check">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2>Got it — thanks!</h2>
+        <p>Your request is in. We'll reach out shortly to confirm details and get your free estimate scheduled.</p>
+        <a class="home-btn" href="https://omggutters.com" target="_top">Back to Homepage</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Prefer to talk it through? Call us at <a href="tel:8103220939">(810) 322-0939</a> ·
+    <a href="https://omggutters.com" target="_top">omggutters.com</a>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('questForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // TODO: wire this up to Formspree / Netlify Forms / your CRM endpoint.
+    document.getElementById('formArea').classList.add('hide');
+    document.getElementById('successArea').classList.add('show');
+    window.scrollTo({top: document.querySelector('.card').offsetTop - 20, behavior:'smooth'});
+  });
+</script>
+
+</body>
+</html>
